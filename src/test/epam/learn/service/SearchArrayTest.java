@@ -8,27 +8,27 @@ import org.testng.annotations.Test;
 
 import by.epam.learn.entity.CustomArray;
 
-import by.epam.learn.service.SearchCustomArray;
+import by.epam.learn.service.SearchArray;
 
-public class SearchCustomArrayTest {
+public class SearchArrayTest {
     CustomArray Array;
-    SearchCustomArray SearchCustomArray;
+    SearchArray SearchArray;
 
     @BeforeClass
     public void setUp() {
         Array = new CustomArray(new int[] {1, 5, 4, -2, 5, -4, 8, 5});
-        SearchCustomArray = new SearchCustomArray();
+        SearchArray = new SearchArray();
     }
 
     @AfterClass
     public void clearData() {
         Array = null;
-        SearchCustomArray = null;
+        SearchArray = null;
     }
 
     @Test
     public void testSearchMinValue() {
-        int actual = SearchCustomArray.searchMinValue(Array);
+        int actual = SearchArray.searchMinValue(Array);
         int expected = -4;
 
         assertEquals(actual, expected);
@@ -36,7 +36,7 @@ public class SearchCustomArrayTest {
 
     @Test
     public void testSearchMaxValue() {
-        int actual = SearchCustomArray.searchMaxValue(Array);
+        int actual = SearchArray.searchMaxValue(Array);
         int expected = 8;
 
         assertEquals(actual, expected);

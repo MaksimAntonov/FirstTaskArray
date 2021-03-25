@@ -5,7 +5,7 @@ import org.apache.logging.log4j.Logger;
 
 import by.epam.learn.entity.CustomArray;
 
-public class FindAndReplaceCustomArray {
+public class ActionArray {
     static Logger Logger = LogManager.getLogger();
 
     public int[] replaceByStriclyCondition(CustomArray array, int condition, int newValue) {

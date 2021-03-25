@@ -8,27 +8,27 @@ import org.testng.annotations.Test;
 
 import by.epam.learn.entity.CustomArray;
 
-import by.epam.learn.service.CalculateCustomArray;
+import by.epam.learn.service.CalculateArray;
 
-public class CalculateCustomArrayTest {
+public class CalculateArrayTest {
     private CustomArray Array;
-    private CalculateCustomArray CalculateCustomArray;
+    private CalculateArray CalculateArray;
 
     @BeforeClass
     public void setUp() {
         Array = new CustomArray(new int[] {1, 5, 4, 2, 5, -4, 8, 5});
-        CalculateCustomArray = new CalculateCustomArray();
+        CalculateArray = new CalculateArray();
     }
 
     @AfterClass
     public void clearData() {
         Array = null;
-        CalculateCustomArray = null;
+        CalculateArray = null;
     }
 
     @Test
     public void testSummary() {
-        int actual = CalculateCustomArray.summary(Array);
+        int actual = CalculateArray.summary(Array);
         int expected = 26;
 
         assertEquals(actual, expected);
@@ -36,7 +36,7 @@ public class CalculateCustomArrayTest {
 
     @Test
     public void testAverage() {
-        double actual = CalculateCustomArray.average(Array);
+        double actual = CalculateArray.average(Array);
         double expected = 3.25;
 
         assertEquals(actual, expected);
@@ -44,7 +44,7 @@ public class CalculateCustomArrayTest {
 
     @Test
     public void testCountsOfPositiveElements() {
-        int actual = CalculateCustomArray.countsOfPositiveElements(Array);
+        int actual = CalculateArray.countsOfPositiveElements(Array);
         int expected = 7;
 
         assertEquals(actual, expected);
@@ -52,7 +52,7 @@ public class CalculateCustomArrayTest {
 
     @Test
     public void testCountsOfNegativeElements() {
-        int actual = CalculateCustomArray.countsOfNegativeElements(Array);
+        int actual = CalculateArray.countsOfNegativeElements(Array);
         int expected = 1;
 
         assertEquals(actual, expected);

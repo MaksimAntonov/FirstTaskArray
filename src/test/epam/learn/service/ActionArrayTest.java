@@ -8,11 +8,11 @@ import org.testng.annotations.Test;
 
 import by.epam.learn.entity.CustomArray;
 
-import by.epam.learn.service.FindAndReplaceCustomArray;
+import by.epam.learn.service.ActionArray;
 
-public class FindAndReplaceCustomArrayTest {
+public class ActionArrayTest {
     private CustomArray Array;
-    private FindAndReplaceCustomArray FindAndReplaceCustomArray;
+    private ActionArray ActionArray;
 
     private void recreateArray() {
         Array = new CustomArray(new int[] {1, 5, 4, -2, 5, -4, 8, 5});
@@ -20,20 +20,20 @@ public class FindAndReplaceCustomArrayTest {
 
     @BeforeClass
     public void setUp() {
-        FindAndReplaceCustomArray = new FindAndReplaceCustomArray();
+        ActionArray = new ActionArray();
         this.recreateArray();
     }
 
     @AfterClass
     public void clearData() {
         Array = null;
-        FindAndReplaceCustomArray = null;
+        ActionArray = null;
     }
 
     @Test
     public void testReplaceByStriclyCondition() {
         this.recreateArray();
-        int[] actual = FindAndReplaceCustomArray.replaceByStriclyCondition(Array, 5, 0);
+        int[] actual = ActionArray.replaceByStriclyCondition(Array, 5, 0);
         int[] expected = new int[] {1, 0, 4, -2, 0, -4, 8, 0};
 
         assertEquals(actual, expected);
@@ -42,7 +42,7 @@ public class FindAndReplaceCustomArrayTest {
     @Test
     public void testReplaceByValueLessCondition() {
         this.recreateArray();
-        int[] actual = FindAndReplaceCustomArray.replaceByValueLessCondition(Array, -1, -1);
+        int[] actual = ActionArray.replaceByValueLessCondition(Array, -1, -1);
         int[] expected = new int[] {1, 5, 4, -1, 5, -1, 8, 5};
 
         assertEquals(actual, expected);
@@ -51,7 +51,7 @@ public class FindAndReplaceCustomArrayTest {
     @Test
     public void testReplaceByValueMoreCondition() {
         this.recreateArray();
-        int[] actual = FindAndReplaceCustomArray.replaceByValueMoreCondition(Array, 4, 7);
+        int[] actual = ActionArray.replaceByValueMoreCondition(Array, 4, 7);
         int[] expected = new int[] {1, 7, 7, -2, 7, -4, 7, 7};
 
         assertEquals(actual, expected);

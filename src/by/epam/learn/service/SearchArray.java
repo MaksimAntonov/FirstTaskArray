@@ -5,7 +5,7 @@ import org.apache.logging.log4j.Logger;
 
 import by.epam.learn.entity.CustomArray;
 
-public class SearchCustomArray {
+public class SearchArray {
     static Logger Logger = LogManager.getLogger();
     
     public int searchMinValue(CustomArray array) {

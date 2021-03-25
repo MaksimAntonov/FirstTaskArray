@@ -5,7 +5,7 @@ import org.apache.logging.log4j.Logger;
 
 import by.epam.learn.entity.CustomArray;
 
-public class CalculateCustomArray {
+public class CalculateArray {
     static Logger Logger = LogManager.getLogger();
 
     public int summary(CustomArray array) {
