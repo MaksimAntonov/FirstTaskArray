@@ -1,5 +1,7 @@
 package by.epam.learn.entity;
 
+import java.util.Arrays;
+
 public class CustomArray {
     private int[] array;
 
@@ -21,6 +23,28 @@ public class CustomArray {
 
     public int getLength() {
         return this.array.length;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || this.getClass() != obj.getClass()) {
+            return false;
+        }
+        
+        CustomArray input = (CustomArray) obj;
+        return Arrays.equals(array, input.array);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = 1;
+        for (int element : array) {
+            result = 31 * result + element;
+        }
+        return result;
     }
 
     @Override
