@@ -31,7 +31,7 @@ public class CalculateCustomArrayTest {
         int actual = CalculateCustomArray.summary(Array);
         int expected = 26;
 
-        assertEquals(actual, expected, actual + " is not equal to " + expected);
+        assertEquals(actual, expected);
     }
 
     @Test

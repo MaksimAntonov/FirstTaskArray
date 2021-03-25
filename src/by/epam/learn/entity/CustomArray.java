@@ -6,11 +6,11 @@ public class CustomArray {
     private int[] array;
 
     public CustomArray(int[] array) {
-        this.array = array;
+        this.array = Arrays.copyOf(array, array.length);
     }
 
     public int[] getArray() {
-        return this.array;
+        return Arrays.copyOf(this.array, this.array.length);
     }
 
     public int getElement(int index) {
@@ -49,7 +49,7 @@ public class CustomArray {
 
     @Override
     public String toString() {
-        StringBuilder string = new StringBuilder("\n- Array, length: " + this.array.length + ", Array data: [");
+        StringBuilder string = new StringBuilder("\n(" + this.array.length + ")[");
         for (int i = 0; i < this.array.length; i++) {
             if (i == 0) {
                 string.append(this.array[i]);
