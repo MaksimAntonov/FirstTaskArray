@@ -4,11 +4,12 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import by.epam.learn.entity.CustomArray;
+import by.epam.learn.exception.CustomExeption;
 
 public class SearchArray {
     static Logger Logger = LogManager.getLogger();
     
-    public int searchMinValue(CustomArray array) {
+    public int searchMinValue(CustomArray array) throws CustomExeption {
         Logger.info("Search Min value");
         int min = array.getElement(0);
         int length = array.getLength();
@@ -23,7 +24,7 @@ public class SearchArray {
         return min;
     }
 
-    public int searchMaxValue(CustomArray array) {
+    public int searchMaxValue(CustomArray array) throws CustomExeption {
         Logger.info("Search Max value");
         int max = array.getElement(0);
         int length = array.getLength();

@@ -7,6 +7,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import by.epam.learn.entity.CustomArray;
+import by.epam.learn.exception.CustomExeption;
 
 import by.epam.learn.service.SearchArray;
 
@@ -27,7 +28,7 @@ public class SearchArrayTest {
     }
 
     @Test
-    public void testSearchMinValue() {
+    public void testSearchMinValue() throws CustomExeption {
         int actual = SearchArray.searchMinValue(Array);
         int expected = -4;
 
@@ -35,7 +36,7 @@ public class SearchArrayTest {
     }
 
     @Test
-    public void testSearchMaxValue() {
+    public void testSearchMaxValue() throws CustomExeption {
         int actual = SearchArray.searchMaxValue(Array);
         int expected = 8;
 

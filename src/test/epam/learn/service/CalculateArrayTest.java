@@ -7,6 +7,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import by.epam.learn.entity.CustomArray;
+import by.epam.learn.exception.CustomExeption;
 
 import by.epam.learn.service.CalculateArray;
 
@@ -27,7 +28,7 @@ public class CalculateArrayTest {
     }
 
     @Test
-    public void testSummary() {
+    public void testSummary() throws CustomExeption {
         int actual = CalculateArray.summary(Array);
         int expected = 26;
 
@@ -35,7 +36,7 @@ public class CalculateArrayTest {
     }
 
     @Test
-    public void testAverage() {
+    public void testAverage() throws CustomExeption {
         double actual = CalculateArray.average(Array);
         double expected = 3.25;
 
@@ -43,7 +44,7 @@ public class CalculateArrayTest {
     }
 
     @Test
-    public void testCountsOfPositiveElements() {
+    public void testCountsOfPositiveElements() throws CustomExeption {
         int actual = CalculateArray.countsOfPositiveElements(Array);
         int expected = 7;
 
@@ -51,7 +52,7 @@ public class CalculateArrayTest {
     }
 
     @Test
-    public void testCountsOfNegativeElements() {
+    public void testCountsOfNegativeElements() throws CustomExeption {
         int actual = CalculateArray.countsOfNegativeElements(Array);
         int expected = 1;
 

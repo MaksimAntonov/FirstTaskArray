@@ -2,6 +2,8 @@ package by.epam.learn.entity;
 
 import java.util.Arrays;
 
+import by.epam.learn.exception.CustomExeption;
+
 public class CustomArray {
     private int[] array;
 
@@ -13,11 +15,17 @@ public class CustomArray {
         return Arrays.copyOf(this.array, this.array.length);
     }
 
-    public int getElement(int index) {
+    public int getElement(int index) throws CustomExeption {
+        if (index < 0 || index >= this.array.length) {
+            throw new CustomExeption("Index is incorrect. Index must be in range 0-"+ (this.array.length-1));
+        }
         return this.array[index];
     }
 
-    public void setElement(int index, int value) {
+    public void setElement(int index, int value) throws CustomExeption {
+        if (index < 0 || index >= this.array.length) {
+            throw new CustomExeption("Index is incorrect. Index must be in range 0-"+ (this.array.length-1));
+        }
         this.array[index] = value;
     }
 

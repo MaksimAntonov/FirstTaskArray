@@ -7,6 +7,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import by.epam.learn.entity.CustomArray;
+import by.epam.learn.exception.CustomExeption;
 
 import by.epam.learn.service.ActionArray;
 
@@ -31,7 +32,7 @@ public class ActionArrayTest {
     }
 
     @Test
-    public void testReplaceByStriclyCondition() {
+    public void testReplaceByStriclyCondition() throws CustomExeption {
         this.recreateArray();
         int[] actual = ActionArray.replaceByStriclyCondition(Array, 5, 0);
         int[] expected = new int[] {1, 0, 4, -2, 0, -4, 8, 0};
@@ -40,7 +41,7 @@ public class ActionArrayTest {
     }
 
     @Test
-    public void testReplaceByValueLessCondition() {
+    public void testReplaceByValueLessCondition() throws CustomExeption {
         this.recreateArray();
         int[] actual = ActionArray.replaceByValueLessCondition(Array, -1, -1);
         int[] expected = new int[] {1, 5, 4, -1, 5, -1, 8, 5};
@@ -49,7 +50,7 @@ public class ActionArrayTest {
     }
 
     @Test
-    public void testReplaceByValueMoreCondition() {
+    public void testReplaceByValueMoreCondition() throws CustomExeption {
         this.recreateArray();
         int[] actual = ActionArray.replaceByValueMoreCondition(Array, 4, 7);
         int[] expected = new int[] {1, 7, 7, -2, 7, -4, 7, 7};
