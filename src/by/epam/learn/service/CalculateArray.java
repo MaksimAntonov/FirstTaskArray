@@ -1,5 +1,7 @@
 package by.epam.learn.service;
 
+import java.util.stream.IntStream;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -51,5 +53,21 @@ public class CalculateArray {
         }
 
         return counter;
+    }
+
+    public int summaryStream(CustomArray array) throws CustomExeption {
+        return IntStream.of(array.getArray()).sum();
+    }
+
+    public double averageStream(CustomArray array) throws CustomExeption {
+        return IntStream.of(array.getArray()).average().getAsDouble();
+    }
+
+    public int countsOfPositiveElementsStream(CustomArray array) throws CustomExeption {
+        return (int) IntStream.of(array.getArray()).filter(i -> i > 0).count();
+    }
+
+    public int countsOfNegativeElementsStream(CustomArray array) throws CustomExeption {
+        return (int) IntStream.of(array.getArray()).filter(i -> i < 0).count();
     }
 }
