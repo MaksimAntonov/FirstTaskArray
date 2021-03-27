@@ -2,7 +2,6 @@ package by.epam.learn.service;
 
 import by.epam.learn.entity.CustomArray;
 
-// TODO Implement 3 sort algoritms
 public class SortArray {
     public CustomArray bubbleSort(CustomArray ca) {
         int[] intArray = ca.getArray();
