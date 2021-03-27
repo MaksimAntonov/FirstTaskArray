@@ -15,6 +15,10 @@ public class CustomArray {
         return Arrays.copyOf(this.array, this.array.length);
     }
 
+    public void setArray(int[] array) {
+        this.array = Arrays.copyOf(array, array.length);
+    }
+
     public int getElement(int index) throws CustomExeption {
         if (index < 0 || index >= this.array.length) {
             throw new CustomExeption("Index is incorrect. Index must be in range 0-"+ (this.array.length-1));
