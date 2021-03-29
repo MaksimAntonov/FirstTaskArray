@@ -55,19 +55,19 @@ public class CalculateArray {
         return counter;
     }
 
-    public int summaryStream(CustomArray array) throws CustomExeption {
+    public int summaryStream(CustomArray array) {
         return IntStream.of(array.getArray()).sum();
     }
 
-    public double averageStream(CustomArray array) throws CustomExeption {
+    public double averageStream(CustomArray array) {
         return IntStream.of(array.getArray()).average().getAsDouble();
     }
 
-    public int countsOfPositiveElementsStream(CustomArray array) throws CustomExeption {
+    public int countsOfPositiveElementsStream(CustomArray array) {
         return (int) IntStream.of(array.getArray()).filter(i -> i > 0).count();
     }
 
-    public int countsOfNegativeElementsStream(CustomArray array) throws CustomExeption {
+    public int countsOfNegativeElementsStream(CustomArray array) {
         return (int) IntStream.of(array.getArray()).filter(i -> i < 0).count();
     }
 }

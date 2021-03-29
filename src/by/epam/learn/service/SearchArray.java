@@ -41,7 +41,7 @@ public class SearchArray {
         return max;
     }
 
-    public int searchMinValueStream(CustomArray array) throws CustomExeption {
+    public int searchMinValueStream(CustomArray array) {
         Logger.info("Search Min value");
         int min = IntStream.of(array.getArray()).min().getAsInt();
 
@@ -49,7 +49,7 @@ public class SearchArray {
         return min;
     }
 
-    public int searchMaxValueStream(CustomArray array) throws CustomExeption {
+    public int searchMaxValueStream(CustomArray array) {
         Logger.info("Search Max value");
         int max = IntStream.of(array.getArray()).max().getAsInt();
 
