@@ -21,13 +21,13 @@ public class FileReader {
     private static final String ARRAY_DATA_FILE = "resourses/";
     
     public List<String> readDataFromFile(String filename) throws CustomExeption {
-        Logger.info("Start reading a data file " + filename);
+        Logger.info("Reading a data file " + filename);
         List<String> stringList = new ArrayList<String>();
         Path path = Paths.get(ARRAY_DATA_FILE + filename);
         if (!Files.exists(path)) {
             throw new CustomExeption("File doesn't exist");
         }
-        Logger.info(path.toString());
+        
         try(Stream<String> streamLines = Files.lines(path)) {
             Iterator<String> iterator = streamLines.iterator();
             while (iterator.hasNext()) {
@@ -37,7 +37,7 @@ public class FileReader {
             Logger.info("Finish reading a data file.");
         } catch (IOException e) {
             Logger.fatal(e.getStackTrace().toString());
-            throw new CustomExeption("Reading file error " + e.getLocalizedMessage(), e);
+            throw new CustomExeption("Reading file error", e);
         }
         return stringList;
     }
