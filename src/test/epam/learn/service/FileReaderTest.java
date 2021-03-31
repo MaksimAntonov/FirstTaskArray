@@ -42,7 +42,8 @@ public class FileReaderTest {
 
     @Test(
         description = "Testing for reading file",
-        dataProvider = "fileReaderTestData"
+        dataProvider = "fileReaderTestData",
+        groups = "createarrayfromfile"
     )
     public void readDataFromFileTest(String filename, List<String> expected) throws CustomExeption {
         List<String> actual = reader.readDataFromFile(filename);
@@ -52,7 +53,8 @@ public class FileReaderTest {
     @Test(
         description = "Testing CustomExeption",
         expectedExceptions = CustomExeption.class,
-        expectedExceptionsMessageRegExp = "File doesn't exist"
+        expectedExceptionsMessageRegExp = "File doesn't exist",
+        groups = "createarrayfromfile"
     )
     public void readDataFromFileExceptionTest() throws CustomExeption {
         reader.readDataFromFile("missing.txt");

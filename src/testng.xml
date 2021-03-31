@@ -2,6 +2,11 @@
  
 <suite name="FirstTaskArray" verbose="1" >
   <test name="Regression1"   >
+    <groups>
+      <run>
+        <include name="createarrayfromfile"/>
+      </run>
+    </groups>
     <packages>
       <package name="test.epam.learn.service" />
    </packages>
