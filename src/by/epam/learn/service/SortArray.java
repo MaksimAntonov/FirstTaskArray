@@ -3,8 +3,8 @@ package by.epam.learn.service;
 import by.epam.learn.entity.CustomArray;
 
 public class SortArray {
-    public CustomArray bubbleSort(CustomArray ca) {
-        int[] intArray = ca.getArray();
+    public CustomArray bubbleSort(CustomArray array) {
+        int[] intArray = array.getArray();
         int length = intArray.length;
         boolean swaped = false;
         for (int i = 0; i < length; i++) {
@@ -23,15 +23,15 @@ public class SortArray {
             }
         }
 
-        ca.setArray(intArray);
-        return ca;
+        array.setArray(intArray);
+        return array;
     }
 
-    public CustomArray quickSort(CustomArray ca) {
-        int[] arr = ca.getArray();
-        this.quickSortIntArray(arr, 0, arr.length - 1);
-        ca.setArray(arr);
-        return ca;
+    public CustomArray quickSort(CustomArray array) {
+        int[] intArray = array.getArray();
+        this.quickSortIntArray(intArray, 0, intArray.length - 1);
+        array.setArray(intArray);
+        return array;
     }
 
     public int[] quickSortIntArray(int[] array, int low, int high) {
@@ -70,8 +70,8 @@ public class SortArray {
         return array;
     }
 
-    public void combSort(CustomArray ca) {
-        int[] intArray = ca.getArray();
+    public CustomArray combSort(CustomArray array) {
+        int[] intArray = array.getArray();
         double factor = 1.2473309;
         int step = intArray.length - 1;
 
@@ -87,6 +87,7 @@ public class SortArray {
             step /= factor;
         }
 
-        ca.setArray(intArray);
+        array.setArray(intArray);
+        return array;
     }
 }

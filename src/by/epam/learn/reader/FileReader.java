@@ -25,7 +25,7 @@ public class FileReader {
         List<String> stringList = new ArrayList<String>();
         Path path = Paths.get(ARRAY_DATA_FILE + filename);
         if (!Files.exists(path)) {
-            throw new CustomExeption("File doesn't exist");
+            throw new CustomExeption("File " + filename + " doesn't exist");
         }
         
         try(Stream<String> streamLines = Files.lines(path)) {
